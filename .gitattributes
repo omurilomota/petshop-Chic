@@ -1,0 +1,16 @@
+# Normaliza quebras de linha (LF no repositório)
+* text=auto eol=lf
+
+# Arquivos binários
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.webp binary
+*.ico binary
+*.woff binary
+*.woff2 binary
+
+# Arquivos gerados: não poluir diff/revisão
+package-lock.json linguist-generated=true
+dist/** linguist-generated=true
