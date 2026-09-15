@@ -15,7 +15,7 @@ export function About() {
       <div className="mx-auto grid max-w-6xl items-center gap-12 px-5 md:grid-cols-2">
         <img
           src={IMAGES.about}
-          alt="Profissional tosando um poodle"
+          alt="Golden retriever com bandana rosa de borboletas e presilhas no pelo"
           loading="lazy"
           className="aspect-[4/5] w-full rounded-3xl object-cover"
         />
