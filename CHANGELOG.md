@@ -1,7 +1,23 @@
 # Changelog
 
 Formato baseado em [Keep a Changelog](https://keepachangelog.com/pt-BR/1.1.0/)
-e [ [Versionamento Semântico](https://semver.org/lang/pt-BR/).
+e [Versionamento Semântico](https://semver.org/lang/pt-BR/).
+
+## [Não publicado]
+
+### Adicionado
+- Mapa apontando para o endereço completo (número, bairro e cidade), com zoom
+  de rua, e link "Ver rota no Google Maps" no card de endereço
+- Crédito discreto do desenvolvedor no rodapé (`CREDITS`, em `src/config.ts`)
+- Patas caninas decorativas no hero e no rodapé (`SHOW_PAW_DECOR`, em
+  `src/config.ts`)
+
+### Corrigido
+- Enquadramento das fotos: o recorte centralizado cortava o alto da cabeça dos
+  pets — presilha dourada e orelhas do primeiro cão da galeria, flor preta do
+  terceiro e presilhas do golden na seção Sobre. As fotos passaram a ser
+  ancoradas no topo (`object-top`)
+- Link do Versionamento Semântico no topo do arquivo estava malformado
 
 ## [1.0.0] - 2026-09-15
 
