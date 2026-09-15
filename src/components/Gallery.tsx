@@ -14,7 +14,7 @@ export function Gallery() {
         <div className="mt-12 grid grid-cols-2 gap-4 md:grid-cols-4">
           {IMAGES.gallery.map((p) => (
             <img
-              key={p.src}
+              key={p.alt}
               src={p.src}
               alt={p.alt}
               loading="lazy"
