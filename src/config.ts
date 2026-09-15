@@ -42,6 +42,11 @@ export const WA_MESSAGE = "Olá! Gostaria de agendar um horário na ChicPets.";
 export const waLink = (message = WA_MESSAGE) =>
   `https://wa.me/${BUSINESS.whatsapp}?text=${encodeURIComponent(message)}`;
 
+/** Crédito discreto exibido no rodapé. Deixe `url` vazio para mostrar só o nome. */
+export const CREDITS = {
+  name: "Murilo Mota",
+  url: "https://github.com/omurilomota",
+};
 
 export const IMAGES = {
   hero: cachorrinho1,
