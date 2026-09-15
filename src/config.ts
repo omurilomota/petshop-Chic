@@ -14,8 +14,8 @@ export const BUSINESS = {
   name: "ChicPets",
   tagline: "Cuidado e carinho para o seu melhor amigo",
   city: "Junqueirópolis - SP",
-  whatsapp: "55 18 99826-5409", // 55 + DDD + número, só dígitos
-  phoneDisplay: "(18) 99999-9999",
+  whatsapp: "5518998265409", // 55 + DDD + número, só dígitos (usado no link wa.me)
+  phoneDisplay: "(18) 99826-5409",
   address: "Rua Belo Horizonte, 1066 - Centro, Junqueirópolis - SP",
   hours: [
     { day: "Segunda a Sexta", time: "08h às 18h" },
