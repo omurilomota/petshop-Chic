@@ -37,7 +37,7 @@ export function Hero() {
         <img
           src={IMAGES.hero}
           alt="Cachorro de pelo longo usando óculos escuros azuis e bandana azul"
-          className="aspect-[4/5] w-full rounded-3xl object-cover"
+          className="aspect-[4/5] w-full rounded-3xl object-cover object-top"
         />
       </div>
     </section>

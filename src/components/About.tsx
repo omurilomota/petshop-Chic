@@ -17,7 +17,7 @@ export function About() {
           src={IMAGES.about}
           alt="Golden retriever com bandana rosa de borboletas e presilhas no pelo"
           loading="lazy"
-          className="aspect-[4/5] w-full rounded-3xl object-cover"
+          className="aspect-[4/5] w-full rounded-3xl object-cover object-top"
         />
 
         <div>
