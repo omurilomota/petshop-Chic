@@ -101,6 +101,21 @@ npm run build
 # publique o conteúdo da pasta dist/
 ```
 
+### ▲ Vercel
+
+O site está no ar temporariamente em
+**<https://petshop-chic.vercel.app>** (projeto `petshop-chic`, na conta do
+desenvolvedor).
+
+```bash
+vercel link            # só na primeira vez: vincula a pasta ao projeto
+vercel deploy          # deploy de preview (URL temporária, só para testes)
+vercel deploy --prod   # publica em petshop-chic.vercel.app
+```
+
+O `vercel link` gera uma pasta `.vercel/` e um `.env.local` locais — os dois
+já estão no `.gitignore`.
+
 ## 🌱 Fluxo de trabalho
 
 Este projeto usa **Gitflow** para branches e **Gitmoji** para commits.
