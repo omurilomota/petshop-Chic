@@ -1,0 +1,113 @@
+# 🐾 ChicPets — Landing Page
+
+Landing page institucional do **ChicPets**, petshop e estética animal em
+Junqueirópolis - SP. Página única (one-page), responsiva, com foco em
+conversão pelo WhatsApp.
+
+[![CI](https://github.com/omurilomota/petshop-Chic/actions/workflows/ci.yml/badge.svg)](https://github.com/omurilomota/petshop-Chic/actions/workflows/ci.yml)
+![React](https://img.shields.io/badge/React-19-61dafb?logo=react&logoColor=white)
+![Vite](https://img.shields.io/badge/Vite-7-646cff?logo=vite&logoColor=white)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-4-38bdf8?logo=tailwindcss&logoColor=white)
+![TypeScript](https://img.shields.io/badge/TypeScript-5-3178c6?logo=typescript&logoColor=white)
+
+## 📋 Sobre o projeto
+
+Site de uma página só com as seções: início, serviços, galeria, sobre,
+contato e localização.
+
+Todo o conteúdo do negócio fica centralizado em
+[`src/config.ts`](src/config.ts) — telefone, WhatsApp, endereço, horários e
+fotos. Trocar dados da loja não exige mexer nos componentes.
+
+### Serviços divulgados
+
+- 🛁 Banho
+- ✂️ Tosa
+- 🩺 Consulta veterinária
+- 🚗 Taxi dog
+
+## 🚀 Como rodar
+
+Pré-requisitos: Node.js 20.19+ ou 22.12+ e npm.
+
+```bash
+npm install
+npm run dev
+```
+
+Acesse http://localhost:5173.
+
+## 📜 Scripts
+
+| Script | Descrição |
+| --- | --- |
+| `npm run dev` | Ambiente de desenvolvimento com HMR |
+| `npm run build` | Build de produção em `dist/` |
+| `npm run preview` | Serve o build de produção localmente |
+| `npm run typecheck` | Verificação de tipos com o TypeScript |
+
+## 🧱 Stack
+
+- **React 19** + **TypeScript**
+- **Vite 7**
+- **Tailwind CSS v4** (tema definido em `src/index.css`)
+- **vite-plugin-singlefile** — o build gera um **único `dist/index.html`**,
+  com CSS, JS e imagens embutidos
+
+## 📁 Estrutura
+
+```
+src/
+├── components/    # Seções da página (Header, Hero, Services, Gallery...)
+├── pictures/      # Fotos da loja (PNG originais + WebP otimizados)
+├── utils/         # Utilitários
+├── config.ts      # Dados do negócio, links e imagens
+├── index.css      # Tema do Tailwind
+└── main.tsx       # Entrada da aplicação
+```
+
+## 🖼️ Imagens
+
+As fotos reais da loja ficam em `src/pictures/`. Os PNGs originais são
+mantidos como fonte e os `.webp` são os arquivos usados pela aplicação
+(~176 KB no total, contra ~2,8 MB dos PNGs).
+
+Para regenerar os WebP depois de trocar/adicionar fotos:
+
+```bash
+for f in src/pictures/*.png; do
+  b=$(basename "$f" .png)
+  ffmpeg -i "$f" -c:v libwebp -quality 82 -compression_level 6 "src/pictures/$b.webp"
+done
+```
+
+> Requer o `ffmpeg` instalado na máquina.
+
+## 🌐 Deploy
+
+O build gera um arquivo único, fácil de hospedar em qualquer serviço
+estático (GitHub Pages, Netlify, Vercel, Hostinger...).
+
+```bash
+npm run build
+# publique o conteúdo da pasta dist/
+```
+
+## 🌱 Fluxo de trabalho
+
+Este projeto usa **Gitflow** para branches e **Gitmoji** para commits.
+Detalhes em [CONTRIBUTING.md](CONTRIBUTING.md).
+
+- `main` — código em produção (apenas releases)
+- `develop` — integração contínua
+- `feature/*` · `release/*` · `hotfix/*`
+
+## 📄 Licença
+
+Projeto privado do ChicPets. © Todos os direitos reservados.
+
+## 📬 Contato
+
+- WhatsApp: (18) 99826-5409
+- Instagram: [@patinhachic.junq](https://instagram.com/patinhachic.junq)
+- Endereço: Rua Belo Horizonte, 1066 - Centro, Junqueirópolis - SP
