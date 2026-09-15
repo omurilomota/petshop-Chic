@@ -48,6 +48,12 @@ export const CREDITS = {
   url: "https://github.com/omurilomota",
 };
 
+/**
+ * Patas caninas decorativas espalhadas pela página (trilha no hero e faixa no
+ * rodapé). Troque para `false` para tirar toda a decoração do site.
+ */
+export const SHOW_PAW_DECOR = true;
+
 export const IMAGES = {
   hero: cachorrinho1,
   about: cachorrinho4,

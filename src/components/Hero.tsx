@@ -1,9 +1,14 @@
 import { BUSINESS, IMAGES, waLink } from "../config";
 import { WhatsAppIcon } from "./icons";
+import { PawTrail } from "./PawDecor";
 
 export function Hero() {
   return (
-    <section id="inicio" className="pt-28 pb-16 sm:pt-36 sm:pb-24">
+    <section id="inicio" className="relative isolate pt-28 pb-16 sm:pt-36 sm:pb-24">
+      {/* Trilha de patas nas laterais livres — só em telas largas, onde não
+          encosta no texto nem na foto. */}
+      <PawTrail className="hidden md:block" />
+
       <div className="mx-auto grid max-w-6xl items-center gap-12 px-5 md:grid-cols-2">
         <div>
           <p className="text-sm font-semibold uppercase tracking-widest text-rose">

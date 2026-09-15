@@ -1,9 +1,12 @@
 import { BUSINESS, CREDITS } from "../config";
+import { PawStrip } from "./PawDecor";
 
 export function Footer() {
   return (
-    <footer className="border-t border-cream-dark py-8">
-      <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-2 px-5 text-sm text-mocha sm:flex-row">
+    <footer className="border-t border-cream-dark pt-6 pb-8">
+      <PawStrip className="mx-auto max-w-6xl px-5" />
+
+      <div className="mx-auto mt-6 flex max-w-6xl flex-col items-center justify-between gap-2 px-5 text-sm text-mocha sm:flex-row">
         <span className="font-serif text-lg font-bold text-coffee">
           Chic<span className="text-rose">Pets</span>
         </span>
