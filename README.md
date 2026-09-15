@@ -19,6 +19,14 @@ Todo o conteúdo do negócio fica centralizado em
 [`src/config.ts`](src/config.ts) — telefone, WhatsApp, endereço, horários e
 fotos. Trocar dados da loja não exige mexer nos componentes.
 
+O mesmo arquivo guarda os ajustes finos do site:
+
+| Constante | Para que serve |
+| --- | --- |
+| `BUSINESS.mapsQuery` | Endereço usado no mapa embutido e no link de rota (aceita `"latitude, longitude"` se o pino cair errado) |
+| `CREDITS` | Crédito discreto no rodapé (deixe `url` vazio para exibir só o nome) |
+| `SHOW_PAW_DECOR` | Liga/desliga as patas caninas decorativas |
+
 ### Serviços divulgados
 
 - 🛁 Banho

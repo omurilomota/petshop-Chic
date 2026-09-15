@@ -1,4 +1,4 @@
-import { BUSINESS, waLink } from "../config";
+import { BUSINESS, mapsEmbedSrc, mapsRouteLink, waLink } from "../config";
 import { LineIcon, WhatsAppIcon } from "./icons";
 import { SectionTitle } from "./SectionTitle";
 
@@ -6,6 +6,7 @@ const ICONS = {
   pin: "M12 21s-6-5.3-6-10a6 6 0 1112 0c0 4.7-6 10-6 10zM12 11a2 2 0 100-4 2 2 0 000 4z",
   clock: "M12 6v6l4 2M12 22a10 10 0 100-20 10 10 0 000 20z",
   phone: "M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3 19.5 19.5 0 01-6-6 19.8 19.8 0 01-3-8.6A2 2 0 014.1 2h3a2 2 0 012 1.7c.1.9.3 1.8.6 2.6a2 2 0 01-.4 2.1L8.1 9.9a16 16 0 006 6l1.5-1.2a2 2 0 012.1-.4c.8.3 1.7.5 2.6.6a2 2 0 011.7 2z",
+  route: "M14 4h6v6M20 4l-8.5 8.5M19 14.5V19a1 1 0 01-1 1H6a1 1 0 01-1-1V7a1 1 0 011-1h4.5",
 };
 
 function InfoCard({ icon, title, children }: { icon: string; title: string; children: React.ReactNode }) {
@@ -23,7 +24,7 @@ function InfoCard({ icon, title, children }: { icon: string; title: string; chil
 }
 
 export function Location() {
-  const mapSrc = `https://maps.google.com/maps?q=${encodeURIComponent(BUSINESS.mapsQuery)}&z=14&output=embed`;
+  const mapSrc = mapsEmbedSrc();
 
   return (
     <section id="contato" className="bg-cream-dark/50 py-20 sm:py-28">
@@ -38,6 +39,15 @@ export function Location() {
           <div className="space-y-4">
             <InfoCard icon={ICONS.pin} title="Endereço">
               {BUSINESS.address}
+              <a
+                href={mapsRouteLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-2 flex w-fit items-center gap-1.5 font-medium text-rose hover:text-rose-dark"
+              >
+                <LineIcon d={ICONS.route} className="h-3.5 w-3.5" />
+                Ver rota no Google Maps
+              </a>
             </InfoCard>
 
             <InfoCard icon={ICONS.clock} title="Horário de funcionamento">

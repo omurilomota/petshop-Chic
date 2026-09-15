@@ -23,13 +23,36 @@ export const BUSINESS = {
     { day: "Domingo", time: "Fechado" },
   ],
   instagram: "@patinhachic.junq",
-  mapsQuery: "Junqueirópolis SP",
+  // Busca usada no mapa embutido e no link de rota. Aponta para o endereço
+  // completo (número + bairro + cidade), não só para a cidade.
+  // Se o pino cair no lugar errado, troque pelo par "latitude, longitude"
+  // exato do Google Maps — ex.: "-21.51430, -51.43300".
+  mapsQuery: "Rua Belo Horizonte, 1066 - Centro, Junqueirópolis - SP",
 };
+
+/** Mapa embutido do Google Maps apontando para o endereço exato da loja. */
+export const mapsEmbedSrc = (zoom = 17) =>
+  `https://maps.google.com/maps?q=${encodeURIComponent(BUSINESS.mapsQuery)}&z=${zoom}&output=embed`;
+
+/** Abre o Google Maps já com a rota até a loja. */
+export const mapsRouteLink = `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(BUSINESS.mapsQuery)}`;
 
 export const WA_MESSAGE = "Olá! Gostaria de agendar um horário na ChicPets.";
 
 export const waLink = (message = WA_MESSAGE) =>
   `https://wa.me/${BUSINESS.whatsapp}?text=${encodeURIComponent(message)}`;
+
+/** Crédito discreto exibido no rodapé. Deixe `url` vazio para mostrar só o nome. */
+export const CREDITS = {
+  name: "Murilo Mota",
+  url: "https://github.com/omurilomota",
+};
+
+/**
+ * Patas caninas decorativas espalhadas pela página (trilha no hero e faixa no
+ * rodapé). Troque para `false` para tirar toda a decoração do site.
+ */
+export const SHOW_PAW_DECOR = true;
 
 export const IMAGES = {
   hero: cachorrinho1,
