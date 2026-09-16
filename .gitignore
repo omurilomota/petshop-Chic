@@ -40,3 +40,6 @@ Thumbs.db
 # Artefatos locais do Vercel (gerados pelo `vercel link` / `vercel deploy`)
 # O `.env.local` criado no link já é coberto pelo padrão `.env.*` acima.
 .vercel
+
+# Artefatos locais do Wrangler (Cloudflare Pages/Workers)
+.wrangler
