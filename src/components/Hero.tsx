@@ -4,12 +4,12 @@ import { PawTrail } from "./PawDecor";
 
 export function Hero() {
   return (
-    <section id="inicio" className="relative isolate pt-28 pb-16 sm:pt-36 sm:pb-24">
+    <section id="inicio" className="relative isolate pt-24 pb-14 sm:pt-36 sm:pb-24">
       {/* Trilha de patas nas laterais livres — só em telas largas, onde não
           encosta no texto nem na foto. */}
       <PawTrail className="hidden md:block" />
 
-      <div className="mx-auto grid max-w-6xl items-center gap-12 px-5 md:grid-cols-2">
+      <div className="mx-auto grid max-w-6xl items-center gap-8 px-5 sm:gap-12 md:grid-cols-2">
         <div>
           <p className="text-sm font-semibold uppercase tracking-widest text-rose">
             Petshop em {BUSINESS.city}
@@ -17,7 +17,7 @@ export function Hero() {
           <h1 className="mt-4 font-serif text-4xl font-bold leading-tight text-coffee sm:text-5xl lg:text-6xl">
             {BUSINESS.tagline}
           </h1>
-          <p className="mt-5 max-w-md text-lg text-coffee-light">
+          <p className="mt-5 max-w-md text-base text-coffee-light sm:text-lg">
             Banho, tosa, atendimento veterinário e taxi dog, com a atenção que o seu pet merece.
           </p>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">

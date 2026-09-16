@@ -17,11 +17,34 @@
 
 html {
   scroll-behavior: smooth;
+  /* Header fixo (h-18 = 4.5rem) + folga: os links âncora não param debaixo dele. */
   scroll-padding-top: 5rem;
+  /* Evita o iOS inflar o texto ao girar o celular para paisagem. */
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
 }
 
 body {
   font-family: var(--font-sans);
   background-color: var(--color-cream);
   color: var(--color-coffee);
+  /* Nenhum elemento decorativo deve criar rolagem horizontal no celular. */
+  overflow-x: hidden;
+  /* Sem flash cinza ao tocar nos botões. */
+  -webkit-tap-highlight-color: transparent;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+/* Rolagem horizontal (carrossel da galeria no mobile) sem barra aparente. */
+@utility no-scrollbar {
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
 }
