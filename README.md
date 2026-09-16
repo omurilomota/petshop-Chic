@@ -94,12 +94,34 @@ done
 ## 🌐 Deploy
 
 O build gera um arquivo único, fácil de hospedar em qualquer serviço
-estático (GitHub Pages, Netlify, Vercel, Hostinger...).
+estático (GitHub Pages, Netlify, Vercel, Cloudflare Pages, Hostinger...).
 
 ```bash
 npm run build
 # publique o conteúdo da pasta dist/
 ```
+
+### ️ Cloudflare Pages
+
+O site também é publicado no **Cloudflare Pages** por integração direta com o
+GitHub — cada push na `main` gera um deploy de produção e cada PR ganha uma
+URL de preview.
+
+O projeto ainda precisa ser criado no painel (uma vez só):
+
+1. Acesse **Workers & Pages → Create → Pages → Connect to Git**.
+2. Autorize o GitHub e selecione o repositório `omurilomota/petshop-Chic`.
+3. Configure o build:
+   - **Framework preset:** `None` (ou `Vite`)
+   - **Build command:** `npm run build`
+   - **Build output directory:** `dist`
+4. Em **Settings → Environment variables**, defina `NODE_VERSION=22` (o Vite 7
+   exige Node 20.19+ ou 22.12+; o `.nvmrc` na raiz também fixa a versão 22).
+
+Não é preciso `_redirects` nem fallback de SPA: o site é uma página única com
+navegação por âncoras, e o build já embute tudo em `dist/index.html`.
+
+> A Vercel continua no ar em paralelo; os dois hosts coexistem.
 
 ### ▲ Vercel
 

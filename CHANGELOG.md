@@ -6,6 +6,12 @@ e [Versionamento Semântico](https://semver.org/lang/pt-BR/).
 ## [Não publicado]
 
 ### Adicionado
+- Versão mobile: barra de ações fixa no rodapé (agendar, ligar e rota), menu
+  hambúrguer com trava de rolagem e foco, carrossel de arrastar na galeria e
+  ajustes de toque/safe areas do iPhone
+- Suporte a `theme-color` e `viewport-fit=cover` para o navegador mobile
+- Publicação no Cloudflare Pages por integração com o GitHub, com Node 22
+  fixado (`.nvmrc` e `NODE_VERSION`), em paralelo à Vercel
 - Mapa apontando para o endereço completo (número, bairro e cidade), com zoom
   de rua, e link "Ver rota no Google Maps" no card de endereço
 - Crédito discreto do desenvolvedor no rodapé (`CREDITS`, em `src/config.ts`)
