@@ -142,9 +142,23 @@ navegação por âncoras, e o build já embute tudo em `dist/index.html`.
 
 ### ▲ Vercel
 
-O site está no ar temporariamente em
-**<https://petshop-chic.vercel.app>** (projeto `petshop-chic`, na conta do
-desenvolvedor).
+O site também é publicado na **Vercel** em
+**<https://petshop-chic.vercel.app>**, com deploy automático a cada push na
+`main` (integração com o GitHub).
+
+O projeto fica como framework **Vite** e a configuração está versionada no
+[`vercel.json`](vercel.json) — build `npm run build` e saída em `dist`:
+
+```json
+{
+  "framework": "vite",
+  "buildCommand": "npm run build",
+  "outputDirectory": "dist",
+  "installCommand": "npm install"
+}
+```
+
+Para deploys manuais pela CLI:
 
 ```bash
 vercel link            # só na primeira vez: vincula a pasta ao projeto
