@@ -6,6 +6,7 @@ import { About } from "./components/About";
 import { Location } from "./components/Location";
 import { Footer } from "./components/Footer";
 import { WhatsAppButton } from "./components/WhatsAppButton";
+import { MobileCTABar } from "./components/MobileCTABar";
 
 export default function App() {
   return (
@@ -20,6 +21,7 @@ export default function App() {
       </main>
       <Footer />
       <WhatsAppButton />
+      <MobileCTABar />
     </>
   );
 }

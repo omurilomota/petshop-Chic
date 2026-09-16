@@ -1,17 +1,10 @@
-import { BUSINESS, mapsEmbedSrc, mapsRouteLink, waLink } from "../config";
-import { LineIcon, WhatsAppIcon } from "./icons";
+import { BUSINESS, mapsEmbedSrc, mapsRouteLink, telLink, waLink } from "../config";
+import { ICON_PATHS, LineIcon, WhatsAppIcon } from "./icons";
 import { SectionTitle } from "./SectionTitle";
-
-const ICONS = {
-  pin: "M12 21s-6-5.3-6-10a6 6 0 1112 0c0 4.7-6 10-6 10zM12 11a2 2 0 100-4 2 2 0 000 4z",
-  clock: "M12 6v6l4 2M12 22a10 10 0 100-20 10 10 0 000 20z",
-  phone: "M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3 19.5 19.5 0 01-6-6 19.8 19.8 0 01-3-8.6A2 2 0 014.1 2h3a2 2 0 012 1.7c.1.9.3 1.8.6 2.6a2 2 0 01-.4 2.1L8.1 9.9a16 16 0 006 6l1.5-1.2a2 2 0 012.1-.4c.8.3 1.7.5 2.6.6a2 2 0 011.7 2z",
-  route: "M14 4h6v6M20 4l-8.5 8.5M19 14.5V19a1 1 0 01-1 1H6a1 1 0 01-1-1V7a1 1 0 011-1h4.5",
-};
 
 function InfoCard({ icon, title, children }: { icon: string; title: string; children: React.ReactNode }) {
   return (
-    <div className="flex items-start gap-4 rounded-2xl border border-cream-dark bg-white p-5">
+    <div className="flex items-start gap-4 rounded-2xl border border-cream-dark bg-white p-4 sm:p-5">
       <span className="flex h-11 w-11 flex-none items-center justify-center rounded-xl bg-blush-soft text-rose">
         <LineIcon d={icon} className="h-5 w-5" />
       </span>
@@ -27,7 +20,7 @@ export function Location() {
   const mapSrc = mapsEmbedSrc();
 
   return (
-    <section id="contato" className="bg-cream-dark/50 py-20 sm:py-28">
+    <section id="contato" className="bg-cream-dark/50 py-14 sm:py-28">
       <div className="mx-auto max-w-6xl px-5">
         <SectionTitle
           eyebrow="Contato"
@@ -35,22 +28,22 @@ export function Location() {
           description="Venha nos visitar ou fale com a gente pelo WhatsApp."
         />
 
-        <div className="mt-12 grid gap-8 lg:grid-cols-2">
+        <div className="mt-10 grid gap-6 sm:mt-12 sm:gap-8 lg:grid-cols-2">
           <div className="space-y-4">
-            <InfoCard icon={ICONS.pin} title="Endereço">
+            <InfoCard icon={ICON_PATHS.pin} title="Endereço">
               {BUSINESS.address}
               <a
                 href={mapsRouteLink}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="mt-2 flex w-fit items-center gap-1.5 font-medium text-rose hover:text-rose-dark"
+                className="mt-1 flex w-fit items-center gap-1.5 py-2 font-medium text-rose hover:text-rose-dark"
               >
-                <LineIcon d={ICONS.route} className="h-3.5 w-3.5" />
+                <LineIcon d={ICON_PATHS.route} className="h-3.5 w-3.5" />
                 Ver rota no Google Maps
               </a>
             </InfoCard>
 
-            <InfoCard icon={ICONS.clock} title="Horário de funcionamento">
+            <InfoCard icon={ICON_PATHS.clock} title="Horário de funcionamento">
               <ul className="space-y-0.5">
                 {BUSINESS.hours.map((h) => (
                   <li key={h.day} className="flex justify-between gap-4">
@@ -61,8 +54,11 @@ export function Location() {
               </ul>
             </InfoCard>
 
-            <InfoCard icon={ICONS.phone} title="Telefone / WhatsApp">
-              {BUSINESS.phoneDisplay}
+            <InfoCard icon={ICON_PATHS.phone} title="Telefone / WhatsApp">
+              {/* inline-block + py: alvo de toque confortável para discar no celular. */}
+              <a href={telLink} className="inline-block py-1.5 font-medium text-coffee hover:text-rose">
+                {BUSINESS.phoneDisplay}
+              </a>
             </InfoCard>
 
             <a
@@ -81,7 +77,7 @@ export function Location() {
             src={mapSrc}
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
-            className="min-h-[360px] w-full rounded-2xl border border-cream-dark"
+            className="min-h-[240px] w-full rounded-2xl border border-cream-dark sm:min-h-[360px]"
           />
         </div>
       </div>

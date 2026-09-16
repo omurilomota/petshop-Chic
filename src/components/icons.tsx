@@ -22,6 +22,18 @@ export function WhatsAppIcon({ className, style }: IconProps) {
   );
 }
 
+/**
+ * Caminhos compartilhados dos ícones de linha (24x24) — endereço, horário,
+ * telefone e rota. Usados nos cards de contato e na barra de ações do mobile.
+ */
+export const ICON_PATHS = {
+  pin: "M12 21s-6-5.3-6-10a6 6 0 1112 0c0 4.7-6 10-6 10zM12 11a2 2 0 100-4 2 2 0 000 4z",
+  clock: "M12 6v6l4 2M12 22a10 10 0 100-20 10 10 0 000 20z",
+  phone:
+    "M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3 19.5 19.5 0 01-6-6 19.8 19.8 0 01-3-8.6A2 2 0 014.1 2h3a2 2 0 012 1.7c.1.9.3 1.8.6 2.6a2 2 0 01-.4 2.1L8.1 9.9a16 16 0 006 6l1.5-1.2a2 2 0 012.1-.4c.8.3 1.7.5 2.6.6a2 2 0 011.7 2z",
+  route: "M14 4h6v6M20 4l-8.5 8.5M19 14.5V19a1 1 0 01-1 1H6a1 1 0 01-1-1V7a1 1 0 011-1h4.5",
+} as const;
+
 /** Generic stroke icon; `d` is an SVG path (24x24 viewBox). */
 export function LineIcon({ d, className = "h-6 w-6", style }: IconProps & { d: string }) {
   return (

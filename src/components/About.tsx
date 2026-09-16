@@ -11,8 +11,8 @@ const points = [
 
 export function About() {
   return (
-    <section id="sobre" className="py-20 sm:py-28">
-      <div className="mx-auto grid max-w-6xl items-center gap-12 px-5 md:grid-cols-2">
+    <section id="sobre" className="py-14 sm:py-28">
+      <div className="mx-auto grid max-w-6xl items-center gap-8 px-5 sm:gap-12 md:grid-cols-2">
         <img
           src={IMAGES.about}
           alt="Golden retriever com bandana rosa de borboletas e presilhas no pelo"
@@ -33,8 +33,8 @@ export function About() {
           </p>
           <ul className="mt-7 space-y-3">
             {points.map((p) => (
-              <li key={p} className="flex items-center gap-3 text-coffee-light">
-                <PawIcon className="h-4 w-4 flex-none text-rose" />
+              <li key={p} className="flex items-start gap-3 text-coffee-light">
+                <PawIcon className="mt-0.5 h-4 w-4 flex-none text-rose" />
                 {p}
               </li>
             ))}

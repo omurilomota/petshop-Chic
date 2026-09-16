@@ -42,6 +42,9 @@ export const WA_MESSAGE = "Olá! Gostaria de agendar um horário na ChicPets.";
 export const waLink = (message = WA_MESSAGE) =>
   `https://wa.me/${BUSINESS.whatsapp}?text=${encodeURIComponent(message)}`;
 
+/** Discagem direta (`tel:`) — usado no botão "Ligar" da barra de ações do mobile. */
+export const telLink = `tel:+${BUSINESS.whatsapp}`;
+
 /** Crédito discreto exibido no rodapé. Deixe `url` vazio para mostrar só o nome. */
 export const CREDITS = {
   name: "Murilo Mota",

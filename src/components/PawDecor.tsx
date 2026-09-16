@@ -64,8 +64,10 @@ export function PawStrip({ count = 26, className = "" }: { count?: number; class
       aria-hidden="true"
       className={`pointer-events-none flex items-center justify-between text-rose/20 ${className}`}
     >
+      {/* No celular, 26 patinhas ficam apertadas na largura da tela: metade
+          delas é escondida e a faixa continua com o mesmo desenho. */}
       {Array.from({ length: count }, (_, i) => (
-        <PawIcon key={i} className={`h-3.5 w-3.5 ${i % 2 ? "rotate-12" : "-rotate-12"}`} />
+        <PawIcon key={i} className={`h-3.5 w-3.5 ${i % 2 ? "hidden rotate-12 sm:block" : "-rotate-12"}`} />
       ))}
     </div>
   );
