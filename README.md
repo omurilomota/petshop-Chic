@@ -101,10 +101,11 @@ npm run build
 # publique o conteúdo da pasta dist/
 ```
 
-### ☁️ Cloudflare Pages
+### ☁️ Cloudflare Workers
 
-O site também é publicado no **Cloudflare Pages** por integração com o GitHub —
-cada push na `main` gera um deploy de produção.
+O site também é publicado no **Cloudflare Workers** por integração com o GitHub —
+cada push na `main` gera um deploy de produção, disponível em
+**<https://petshop-chic.murilohenriquemota935.workers.dev>**.
 
 O painel da Cloudflare foi unificado em **Workers & Pages → Create**, e nesse
 fluxo a configuração de build **não fica na tela de preset**: quem manda é o
