@@ -107,33 +107,32 @@ O site também é publicado no **Cloudflare Pages** por integração com o GitHu
 cada push na `main` gera um deploy de produção.
 
 O painel da Cloudflare foi unificado em **Workers & Pages → Create**, e nesse
-fluxo a configuração de build **não fica na tela**: quem manda é o
-[`wrangler.jsonc`](wrangler.jsonc) na raiz do repositório. É por isso que os
-campos *Framework preset* / *Build output directory* não aparecem — os campos de
-*Advanced settings* (path, API token, variables) são de deploy e ambiente.
-
-O `wrangler.jsonc` já aponta a saída do Vite:
+fluxo a configuração de build **não fica na tela de preset**: quem manda é o
+[`wrangler.jsonc`](wrangler.jsonc) na raiz do repositório, e o formulário exige
+um **deploy command** (o Pages clássico, com *Framework preset* e *Build output
+directory*, é o fluxo legado). O arquivo usa **assets estáticos de Worker**,
+apontando para a saída do Vite:
 
 ```jsonc
 {
   "name": "petshop-chic",
-  "pages_build_output_dir": "./dist",
-  "compatibility_date": "2026-09-15"
+  "compatibility_date": "2026-09-15",
+  "assets": {
+    "directory": "./dist"
+  }
 }
 ```
 
 Passos no painel (uma vez só):
 
-1. **Workers & Pages → Create → Pages → Connect to Git**.
+1. **Workers & Pages → Create → Import a repository**.
 2. Autorize o GitHub e selecione o repositório `omurilomota/petshop-Chic`.
-3. Confirme o comando de build como `npm run build` (a saída `dist` é lida do
-   `wrangler.jsonc`).
-4. Em **Settings → Environment variables**, defina `NODE_VERSION=22` (o Vite 7
-   exige Node 20.19+ ou 22.12+; o `.nvmrc` na raiz também fixa a versão 22).
-
-> Se em vez da aba **Pages** o fluxo oferecer um **Worker com assets estáticos**,
-> troque a chave `pages_build_output_dir` por
-> `"assets": { "directory": "./dist" }` — o restante do build é o mesmo.
+3. Preencha:
+   - **Build command:** `npm run build`
+   - **Deploy command:** `npm run deploy` (`wrangler deploy`)
+4. Em **Settings → Variables and Secrets / Environment variables**, defina
+   `NODE_VERSION=22` (o Vite 7 exige Node 20.19+ ou 22.12+; o `.nvmrc` na raiz
+   também fixa a versão 22).
 
 Não é preciso `_redirects` nem fallback de SPA: o site é uma página única com
 navegação por âncoras, e o build já embute tudo em `dist/index.html`.
