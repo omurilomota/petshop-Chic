@@ -19,6 +19,14 @@ Todo o conteúdo do negócio fica centralizado em
 [`src/config.ts`](src/config.ts) — telefone, WhatsApp, endereço, horários e
 fotos. Trocar dados da loja não exige mexer nos componentes.
 
+O mesmo arquivo guarda os ajustes finos do site:
+
+| Constante | Para que serve |
+| --- | --- |
+| `BUSINESS.mapsQuery` | Endereço usado no mapa embutido e no link de rota (aceita `"latitude, longitude"` se o pino cair errado) |
+| `CREDITS` | Crédito discreto no rodapé (deixe `url` vazio para exibir só o nome) |
+| `SHOW_PAW_DECOR` | Liga/desliga as patas caninas decorativas |
+
 ### Serviços divulgados
 
 - 🛁 Banho
@@ -86,12 +94,65 @@ done
 ## 🌐 Deploy
 
 O build gera um arquivo único, fácil de hospedar em qualquer serviço
-estático (GitHub Pages, Netlify, Vercel, Hostinger...).
+estático (GitHub Pages, Netlify, Vercel, Cloudflare Pages, Hostinger...).
 
 ```bash
 npm run build
 # publique o conteúdo da pasta dist/
 ```
+
+### ☁️ Cloudflare Pages
+
+O site também é publicado no **Cloudflare Pages** por integração com o GitHub —
+cada push na `main` gera um deploy de produção.
+
+O painel da Cloudflare foi unificado em **Workers & Pages → Create**, e nesse
+fluxo a configuração de build **não fica na tela de preset**: quem manda é o
+[`wrangler.jsonc`](wrangler.jsonc) na raiz do repositório, e o formulário exige
+um **deploy command** (o Pages clássico, com *Framework preset* e *Build output
+directory*, é o fluxo legado). O arquivo usa **assets estáticos de Worker**,
+apontando para a saída do Vite:
+
+```jsonc
+{
+  "name": "petshop-chic",
+  "compatibility_date": "2026-09-15",
+  "assets": {
+    "directory": "./dist"
+  }
+}
+```
+
+Passos no painel (uma vez só):
+
+1. **Workers & Pages → Create → Import a repository**.
+2. Autorize o GitHub e selecione o repositório `omurilomota/petshop-Chic`.
+3. Preencha:
+   - **Build command:** `npm run build`
+   - **Deploy command:** `npm run deploy` (`wrangler deploy`)
+4. Em **Settings → Variables and Secrets / Environment variables**, defina
+   `NODE_VERSION=22` (o Vite 7 exige Node 20.19+ ou 22.12+; o `.nvmrc` na raiz
+   também fixa a versão 22).
+
+Não é preciso `_redirects` nem fallback de SPA: o site é uma página única com
+navegação por âncoras, e o build já embute tudo em `dist/index.html`.
+
+> A Vercel continua no ar em paralelo; os dois hosts coexistem.
+
+### ▲ Vercel
+
+O site está no ar temporariamente em
+**<https://petshop-chic.vercel.app>** (projeto `petshop-chic`, na conta do
+desenvolvedor).
+
+```bash
+vercel link            # só na primeira vez: vincula a pasta ao projeto
+vercel deploy          # deploy de preview (URL temporária, só para testes)
+vercel deploy --prod   # publica em petshop-chic.vercel.app
+```
+
+O `vercel link` gera uma pasta `.vercel/` e um `.env.local` locais — os dois
+já estão no `.gitignore`.
 
 ## 🌱 Fluxo de trabalho
 
