@@ -11,11 +11,23 @@ export function Hero() {
 
       <div className="mx-auto grid max-w-6xl items-center gap-8 px-5 sm:gap-12 md:grid-cols-2">
         <div>
-          <p className="text-sm font-semibold uppercase tracking-widest text-rose">
-            Petshop em {BUSINESS.city}
-          </p>
-          <h1 className="mt-4 font-serif text-4xl font-bold leading-tight text-coffee sm:text-5xl lg:text-6xl">
-            {BUSINESS.tagline}
+          {/*
+            O H1 existe uma vez só por página e é o título que o Google usa
+            para entender do que o site trata. Antes ele continha apenas o
+            slogan, e as palavras-chave do negócio ("petshop" + a cidade)
+            ficavam num <p> acima — invisíveis para a hierarquia do documento.
+
+            Agora as duas coisas fazem parte do mesmo h1: a "sobrancelha" rosa
+            virou um <span> dentro dele, com o mesmo tamanho, cor e
+            espaçamento de antes. O visual não muda; o que muda é a semântica.
+            O `leading-5` repete exatamente a altura de linha que o `text-sm`
+            dava ao <p>, para o layout não andar um pixel.
+          */}
+          <h1 className="font-serif text-4xl font-bold leading-tight text-coffee sm:text-5xl lg:text-6xl">
+            <span className="block font-sans text-sm font-semibold uppercase leading-5 tracking-widest text-rose">
+              Petshop em {BUSINESS.city}
+            </span>
+            <span className="mt-4 block">{BUSINESS.tagline}</span>
           </h1>
           <p className="mt-5 max-w-md text-base text-coffee-light sm:text-lg">
             Banho, tosa, atendimento veterinário e taxi dog, com a atenção que o seu pet merece.
