@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <!-- viewport-fit=cover libera o uso das safe areas (notch e barra inferior
+         do iPhone) nas barras fixas do mobile. -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="description" content="ChicPets — Banho, Tosa, Veterinário e Taxi Dog em Junqueirópolis. Cuidado e carinho para o seu melhor amigo." />
+    <!-- Cor da barra do navegador no mobile, igual ao fundo do site. -->
+    <meta name="theme-color" content="#fff8f0" />
+    <!-- A landing é indexável. As rotas de demo e agendamento ajustam esta tag
+         para noindex em tempo de execução (src/App.tsx). -->
+    <meta name="robots" content="index, follow" />
+
+    <!--
+      Open Graph e Twitter Card: é daqui que o WhatsApp, o Facebook e o
+      LinkedIn montam o preview do link. Esses coletores NÃO executam
+      JavaScript — e como o site é renderizado por JS, sem estas tags eles
+      enxergam uma página vazia e o link aparece sem imagem e sem título.
+
+      A imagem precisa de URL ABSOLUTA: caminho relativo não é resolvido por
+      vários desses robôs. O arquivo vive em public/og-image.jpg (1200x630),
+      que o Vite copia para a raiz do dist no build.
+    -->
+    <link rel="canonical" href="https://petshop-chic.murilohenriquemota935.workers.dev/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="pt_BR" />
+    <meta property="og:site_name" content="ChicPets" />
+    <meta property="og:url" content="https://petshop-chic.murilohenriquemota935.workers.dev/" />
+    <meta property="og:title" content="ChicPets · Banho, Tosa e Veterinário em Junqueirópolis" />
+    <meta
+      property="og:description"
+      content="Banho, tosa, atendimento veterinário e taxi dog em Junqueirópolis - SP. Cuidado e carinho para o seu melhor amigo."
+    />
+    <meta property="og:image" content="https://petshop-chic.murilohenriquemota935.workers.dev/og-image.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Cachorro de pelo longo com óculos escuros azuis e bandana azul — ChicPets" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="ChicPets · Banho, Tosa e Veterinário em Junqueirópolis" />
+    <meta
+      name="twitter:description"
+      content="Banho, tosa, atendimento veterinário e taxi dog em Junqueirópolis - SP."
+    />
+    <meta name="twitter:image" content="https://petshop-chic.murilohenriquemota935.workers.dev/og-image.jpg" />
+
+    <!-- Ícone da aba: pata da marca (mesmo desenho do PawIcon) em SVG embutido.
+         Inline de propósito, para a aba não fazer uma requisição extra.
+         (O comentário anterior dizia que era porque o build singlefile não
+         copia o public/ — isso é falso: o public/ É copiado, e é de lá que sai
+         o og-image.jpg acima.) -->
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect width='24' height='24' rx='5' fill='%23e91e63'/%3E%3Cg fill='%23fff8f0' transform='translate(12 12.3) scale(0.68) translate(-12 -12.6)'%3E%3Cellipse cx='5.5' cy='12' rx='2' ry='2.6'/%3E%3Cellipse cx='9.5' cy='8' rx='2' ry='2.6'/%3E%3Cellipse cx='14.5' cy='8' rx='2' ry='2.6'/%3E%3Cellipse cx='18.5' cy='12' rx='2' ry='2.6'/%3E%3Cpath d='M12 12.5c2.6 0 4.8 1.7 5.6 4 .6 1.7-.7 3.3-2.5 3.3-1 0-1.9-.4-3.1-.4s-2.1.4-3.1.4c-1.8 0-3.1-1.6-2.5-3.3.8-2.3 3-4 5.6-4z'/%3E%3C/g%3E%3C/svg%3E" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <!--
+      Só os pesos realmente usados: Playfair aparece apenas em negrito no site
+      (todos os usos de `font-serif` vêm com `font-bold`) e o itálico não é
+      usado em lugar nenhum; Poppins 300 (font-light) também nunca aparece.
+      Eram 11 arquivos de fonte, agora são 5.
+    -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <title>ChicPets · Petshop & Estética Animal em Junqueirópolis</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

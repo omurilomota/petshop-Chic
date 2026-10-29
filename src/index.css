@@ -1,0 +1,104 @@
+@import "tailwindcss";
+
+@theme {
+  --color-cream: #fff8f0;
+  --color-cream-dark: #f3e7d7;
+  --color-coffee: #4a2c2a;
+  --color-coffee-light: #6b4a48;
+  --color-mocha: #8d6e63;
+  --color-blush: #f8bbd0;
+  --color-blush-soft: #fce4ec;
+  --color-rose: #e91e63;
+  --color-rose-dark: #c2185b;
+
+  --font-serif: "Playfair Display", serif;
+  --font-sans: "Poppins", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+  /* Header fixo (h-18 = 4.5rem) + folga: os links âncora não param debaixo dele. */
+  scroll-padding-top: 5rem;
+  /* Evita o iOS inflar o texto ao girar o celular para paisagem. */
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--color-cream);
+  color: var(--color-coffee);
+  /* Nenhum elemento decorativo deve criar rolagem horizontal no celular. */
+  overflow-x: hidden;
+  /* Sem flash cinza ao tocar nos botões. */
+  -webkit-tap-highlight-color: transparent;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+/* Rolagem horizontal (carrossel da galeria no mobile) sem barra aparente. */
+@utility no-scrollbar {
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+/* Slider da calculadora: trilho preenchido via style inline e polegar da marca. */
+.range-input {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 8px;
+  border-radius: 9999px;
+  outline: none;
+  cursor: pointer;
+}
+
+.range-input::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 9999px;
+  background: #fff;
+  border: 3px solid var(--color-rose);
+  box-shadow: 0 1px 3px rgba(74, 44, 42, 0.2);
+}
+
+.range-input::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  border-radius: 9999px;
+  background: #fff;
+  border: 3px solid var(--color-rose);
+  box-shadow: 0 1px 3px rgba(74, 44, 42, 0.2);
+}
+
+.range-input:focus-visible {
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-rose) 25%, transparent);
+}
+
+@media print {
+  @page {
+    size: A4;
+    margin: 11mm;
+  }
+
+  html {
+    scroll-padding-top: 0;
+  }
+
+  body {
+    background: #fff !important;
+  }
+
+  * {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+}

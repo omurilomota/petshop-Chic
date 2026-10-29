@@ -1,0 +1,51 @@
+# Dependências
+node_modules/
+.pnp
+.pnp.js
+
+# Build
+dist/
+dist-ssr/
+*.local
+
+# Cache
+.vite/
+.cache/
+*.tsbuildinfo
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Variáveis de ambiente
+.env
+.env.*
+!.env.example
+
+# Editores e SO
+.vscode/*
+!.vscode/extensions.json
+.idea/
+.DS_Store
+Thumbs.db
+*.suo
+*.njsproj
+*.sln
+*.sw?
+
+# Artefatos locais do Vercel (gerados pelo `vercel link` / `vercel deploy`)
+# O `.env.local` criado no link já é coberto pelo padrão `.env.*` acima.
+.vercel
+
+# Artefatos locais do Wrangler (Cloudflare Pages/Workers)
+.wrangler
+
+# Conteúdo interno e artefatos locais (não publicar)
+ROTEIRO-APRESENTACAO.md
+_ops/
+.kilo/
+dist/
