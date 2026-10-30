@@ -15,8 +15,8 @@ export const BUSINESS = {
   tagline: "Cuidado e carinho para o seu melhor amigo",
   city: "Junqueirópolis - SP",
   whatsapp: "5518999990117", // 55 + DDD + número, só dígitos (usado no link wa.me)
-  whatsappDev: "5518999990118",
-  whatsappDevDisplay: "(18) 99999-0118",
+  whatsappDev: "5518998133524",
+  whatsappDevDisplay: "55 (18) 99813-3524",
   phoneDisplay: "(18) 99999-0117",
   address: "Rua dos Girassóis, 220 - Centro, Junqueirópolis - SP",
   hours: [
@@ -54,6 +54,7 @@ export const ownerWhatsAppLink = (message = "Olá, Murilo! Vi a proposta da Chic
 /** Crédito discreto exibido no rodapé. O link leva ao WhatsApp do Murilo. */
 export const CREDITS = {
   name: "Murilo Mota",
+  phoneDisplay: BUSINESS.whatsappDevDisplay,
   url: ownerWhatsAppLink("Olá, Murilo! Vi o site da ChicPets e queria falar com você."),
 };
 
