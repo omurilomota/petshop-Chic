@@ -17,18 +17,18 @@ export function Footer() {
 
       {/* Crédito discreto: baixo contraste de propósito, some no meio do rodapé. */}
       <p className="mt-5 text-center text-[11px] tracking-wide text-mocha/50">
-        Desenvolvido por{" "}
         {CREDITS.url ? (
           <a
             href={CREDITS.url}
             target="_blank"
             rel="noopener noreferrer"
+            aria-label="Falar com Murilo Mota no WhatsApp"
             className="inline-block py-1 underline decoration-dotted underline-offset-2 hover:text-rose"
           >
-            {CREDITS.name}
+            Desenvolvido por {CREDITS.name} · {CREDITS.phoneDisplay}
           </a>
         ) : (
-          CREDITS.name
+          <>Desenvolvido por {CREDITS.name} · {CREDITS.phoneDisplay}</>
         )}
       </p>
 
